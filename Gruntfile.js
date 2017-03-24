@@ -9,8 +9,9 @@ module.exports = (grunt) => {
     grunt.initConfig({
         mochacli : {
             options : {
-                reporter : 'report.js'
-            },
+                reporter : 'report.js' 
+                //reporter : 'spec' 
+                            },
             all :  ['test/*.js']
         },
         watch : {
