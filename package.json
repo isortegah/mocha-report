@@ -1,0 +1,29 @@
+{
+  "name": "mocha-report",
+  "version": "0.0.1",
+  "description": "Reporte para mocha integrado con slack",
+  "main": "app.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isortegah/mocha-report.git"
+  },
+  "keywords": [
+    "mocha",
+    "slack"
+  ],
+  "author": "ISORTEGAH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isortegah/mocha-report/issues"
+  },
+  "homepage": "https://github.com/isortegah/mocha-report#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha-cli": "^3.0.0",
+    "mocha": "^3.2.0"
+  }
+}
