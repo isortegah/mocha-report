@@ -9,6 +9,7 @@ module.exports = (grunt) => {
     grunt.initConfig({
         mochacli : {
             options : {
+                reporter : 'report.js'
             },
             all :  ['test/*.js']
         },
@@ -16,7 +17,8 @@ module.exports = (grunt) => {
             mochaTest : {
                 files : [
                     'Gruntfile.js',
-                    'test/*.js'
+                    'test/*.js',
+                    '*.js'
                 ],
                 tasks : ['test']
             }
