@@ -5,7 +5,8 @@
 
 var mocha = require('mocha');
 var Promise = require('bluebird');
-var request = require('request');
+//var request = require('request');
+var request = require('sync-request');
 
 
   
@@ -18,35 +19,18 @@ function report (runner){
     var failures = 0;
 
   //reqSlack().then(x => console.log(x))
-  requestSlack();
+  //requestSlack();
   //otroSlack();
 
-var r, e, b, f = false;
-request.post('https://hooks.slack.com/services/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', {
-  json: true,
-  body: {"channel":"#canalqa","username":"@iortega","text":"[INFO] Pruebas reporter rafa"}
-}, function(err, res, body){
-  console.log("termino");
-  f = res
-  e = err
-  b = body
-  f = true
-  // return callback(null, true);
-});
-while(f);
-console.log("res", r)
-console.log("err", e)
-console.log("body", b)
 
 
-
-
-
-  
 
 
   runner.on('test end', (test)=> {
     //console.log(test);
+    request('POST','https://hooks.slack.com/services/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', {
+  json: {"channel":"#canalqa","username":"@iortega","text":"[INFO] Pruebas reporter"}
+  });
   });
     runner.on('pass', function(test){
     passes++;
@@ -82,7 +66,7 @@ module.exports = report;
       })
       
 } */
-
+/*
 function requestSlack(){
     console.log("dentro de Bluebird");
     request.post('https://hooks.slack.com/services/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', {
@@ -91,9 +75,9 @@ function requestSlack(){
 }, function(err, res){
   console.log("termino");
   // return callback(null, true);
-})
+})*/
     //while (f) { console.log('while'); }
-}
+//}
 
 
 function otroSlack(){
